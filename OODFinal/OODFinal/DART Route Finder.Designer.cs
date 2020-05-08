@@ -1,4 +1,7 @@
-﻿namespace OODFinal
+﻿using System;
+using System.Collections.Generic;
+
+namespace OODFinal
 {
     partial class Form1
     {
@@ -20,6 +23,7 @@
             base.Dispose(disposing);
         }
 
+
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -34,27 +38,12 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.findRoute = new System.Windows.Forms.Button();
+            this.outputText = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // currentLocation
             // 
             this.currentLocation.FormattingEnabled = true;
-            this.currentLocation.Items.AddRange(new object[] {
-            "801 Grand",
-            "Pappajohn Sculpture Park",
-            "Central Library",
-            "DMACC",
-            "E 1st & S Ankeny",
-            "SE Oralabor & SE Delaware",
-            "Fairgrounds",
-            "Capitol Hill",
-            "Botanical Garden",
-            "Des Moines International Airport",
-            "Blank Park Zoo",
-            "SE 14th & Army Post",
-            "63rd & Grand",
-            "Shops at Roosevelt",
-            "Waveland"});
             this.currentLocation.Location = new System.Drawing.Point(12, 31);
             this.currentLocation.Name = "currentLocation";
             this.currentLocation.Size = new System.Drawing.Size(261, 21);
@@ -64,22 +53,6 @@
             // destination
             // 
             this.destination.FormattingEnabled = true;
-            this.destination.Items.AddRange(new object[] {
-            "801 Grand",
-            "Pappajohn Sculpture Park",
-            "Central Library",
-            "DMACC",
-            "E 1st & S Ankeny",
-            "SE Oralabor & SE Delaware",
-            "Fairgrounds",
-            "Capitol Hill",
-            "Botanical Garden",
-            "Des Moines International Airport",
-            "Blank Park Zoo",
-            "SE 14th & Army Post",
-            "63rd & Grand",
-            "Shops at Roosevelt",
-            "Waveland"});
             this.destination.Location = new System.Drawing.Point(12, 77);
             this.destination.Name = "destination";
             this.destination.Size = new System.Drawing.Size(261, 21);
@@ -108,18 +81,29 @@
             // 
             // findRoute
             // 
-            this.findRoute.Location = new System.Drawing.Point(198, 104);
+            this.findRoute.Location = new System.Drawing.Point(12, 104);
             this.findRoute.Name = "findRoute";
             this.findRoute.Size = new System.Drawing.Size(75, 23);
             this.findRoute.TabIndex = 4;
             this.findRoute.Text = "Find Route";
             this.findRoute.UseVisualStyleBackColor = true;
+            this.findRoute.Click += new System.EventHandler(this.findRoute_Click);
+            // 
+            // outputText
+            // 
+            this.outputText.Location = new System.Drawing.Point(12, 133);
+            this.outputText.Name = "outputText";
+            this.outputText.Size = new System.Drawing.Size(261, 189);
+            this.outputText.TabIndex = 5;
+            this.outputText.Text = "";
+            this.outputText.TextChanged += new System.EventHandler(this.outputText_TextChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(589, 513);
+            this.ClientSize = new System.Drawing.Size(286, 334);
+            this.Controls.Add(this.outputText);
             this.Controls.Add(this.findRoute);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -141,6 +125,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button findRoute;
+        private System.Windows.Forms.RichTextBox outputText;
     }
 }
 

@@ -11,7 +11,7 @@ namespace OODFinal
 {
     class Data : Read
     {
-        public List<Stop> stops = new List<Stop>();
+        private List<Stop> stops = new List<Stop>();
         private List<Route> routes = new List<Route>();
         private List<Bus> buses = new List<Bus>();
         int numStops = 0, numRoutes = 0, numBuses = 0;
@@ -33,6 +33,19 @@ namespace OODFinal
         ~Data()
         {
 
+        }
+
+        public List<Stop> GetStops()
+        {
+            return this.stops;
+        }
+
+        public List<string> GetStopNames()
+        {
+            List<string> stopNames = new List<string>();
+            for (int z = 0; z < this.numStops; z++)
+                stopNames.Add(stops[z].GetName());
+            return stopNames;
         }
 
         public override void AddStops(string fileName)
